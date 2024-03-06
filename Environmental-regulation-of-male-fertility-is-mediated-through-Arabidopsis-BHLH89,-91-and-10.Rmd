@@ -1,0 +1,778 @@
+---
+title: Environmental regulation of male fertility is mediated through Arabidopsis
+  bHLH89, 91 and 10
+date: "2024-01-13"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+# Introduction  
+
+Formation of functional pollen and subsequent successful fertilization rely upon the spatial and temporal regulation of anther and pollen development. The tapetum plays an important role in this through the regulation of meiotic progression and the coordination, synthesis, and secretion of the pollen wall. Genetic control of Arabidopsis tapetum development involves a series of complex interacting regulatory networks containing feedback and feedforward loops in which several transcription factors are known to play key roles including the pivotal basic helix–loop–helix (bHLH) transcription factors, DYSFUNCTIONAL TAPETUM1 (DYT1) and ABORTED MICROSPORES (AMS). DYT1 and AMS have also been shown to interact with three bHLH proteins: bHLH10, bHLH89, and bHLH91.  
+   
+Previous studies demonstrated that bHLH 10, 89 and 91 are functionally redundant in anther development, regulating control of callose deposition and pollen wall formation. The bhlh single mutants have been shown to be fully fertile and morphologically indistinguishable from wild-type (WT) Col-0, while the double and triple bhlh mutants have increasingly defective anther development. The double mutants bhlh089 bhlh091 and bhlh089 bhlh010 have been reported as having reduced numbers of mature pollen grains, whereas the triple bhlh089 bhlh010 amiR-bHLH091 mutant is completely male sterile, with smaller anthers and shorter filaments.  
+In bhlh089 bhlh091 anthers, the tapetal cell size was observed to be uneven and the tapetum layer less organized than those of the WT. Despite the high sequence similarity and functional redundancy indicated by the bhlh89, 91 mutant phenotypes, these bHLHs have been shown to play distinct roles in activating downstream transcription.  
+
+Recent studies have shown that bhlh089 bhlh091 double mutant exhibit conditional sterility in response to high temperatures. In this study we characterize new alleles of bhlh89,91 double mutant and show that they are not fully redundant but have distinct impacts on fertility. They present novel responses to environmental conditions with a distinct light-sensitive male sterility phenotype, manifesting in an extended sterility phenotype in early flowers under low light conditions. Light is known to influence male reproductive development in terms of day length and the duration of light exposure, but additionally light intensity has been shown to affect the initiation of flowering via phytochrome-mediated pathways involving PHYTOCHROME INTERACTING FACTORS (PIFs), a class of bHLH proteins.Here we show that bhlh89,91 mutant exhibits increased sterility in response to not only high temperatures but also low light.  
+
+# Experiment conditions  
+
+Plants were grown at 21 °C (16 h days under fluorescent lighting, with a 4:4:1 ratio of red:green:blue light). At the onset of flowering, just before bolting, plants were moved to different environmental treatments. In normal light conditions, plants were illuminated with a photosynthetic photon flux density (PPFD) of 205 (±8.6 SD) µmol m–2 s–1, while the low light plants received 53 (±5) µmol m–2 s–1 PPFD through use of net shading. For high temperature treatment, plants were transferred to 28 °C.  
+
+After quantitative reverse transcription-PCR (qRT-PCR), RNA isolation and sequencing were performed. The details of each sample are shown in the following table:  
+
+Run | Bases	 | Experiment	| Genotype	| Sample | Name	| Assay Type	| Library Layout	| Library Source |	SRA Study |	Treatment  
+-------------------------------------------------------------------------------------------------------------------------------  
+SRR26961623 |	4551765400 | SRX22655351 | Col-0	| GSM7919278 |	RNA-Seq |	PAIRED	| TRANSCRIPTOMIC |	SRP474470 |	normal light (200umol/m2/s)
+SRR26961624 |	4775682600 |	SRX22655350 |	Col-0	| GSM7919277	| RNA-Seq |	PAIRED | TRANSCRIPTOMIC |	SRP474470 |	normal light (200umol/m2/s)
+SRR26961625 |	4787175000 |	SRX22655348 |	Col-0 |	GSM7919275 |	RNA-Seq |	PAIRED |	TRANSCRIPTOMIC |	SRP474470 |	normal light (200umol/m2/s)
+SRR26961626 |	4565381200 |	SRX22655346 |	Col-0	| GSM7919273	| RNA-Seq |	PAIRED |	TRANSCRIPTOMIC | SRP474470	| low light (50umol/m2/s)
+SRR26961627 |	4804228200 |	SRX22655345 |	Col-0 |	GSM7919272 |	RNA-Seq |	PAIRED |	TRANSCRIPTOMIC |	SRP474470 |	low light (50umol/m2/s)
+SRR26961628 |	4564334800 |	SRX22655347	| Col-0 | GSM7919274 |	RNA-Seq |	PAIRED |	TRANSCRIPTOMIC |	SRP474470 |	low light (50umol/m2/s)
+SRR26961629 |	4550582800 |	SRX22655349 |	Col-0 |	GSM7919276 |	RNA-Seq |	PAIRED |	TRANSCRIPTOMIC |	SRP474470 |	normal light (200umol/m2/s)
+SRR26961630 |	4555350000 |	SRX22655344 |	Col-0 |	GSM7919271 |	RNA-Seq |	PAIRED |	TRANSCRIPTOMIC |	SRP474470 |	low light (50umol/m2/s)
+SRR26961631 |	4206711800 |	SRX22655343 |	bhlh89\,91 |	GSM7919270 |	RNA-Seq |	PAIRED |	TRANSCRIPTOMIC | SRP474470 |	normal light (200umol/m2/s)
+SRR26961632 |	4557894600 |	SRX22655341 |	bhlh89\,91 |	GSM7919268 |	RNA-Seq |	PAIRED |	TRANSCRIPTOMIC | SRP474470 |	normal light (200umol/m2/s)
+SRR26961633 |	4556175800 |	SRX22655339 |	bhlh89\,91 |	GSM7919266 |	RNA-Seq |	PAIRED |	TRANSCRIPTOMIC | SRP474470 |	low light (50umol/m2/s)
+SRR26961634 |	4398103200 |	SRX22655338 |	bhlh89\,91 |	GSM7919265 |	RNA-Seq |	PAIRED |	TRANSCRIPTOMIC | SRP474470 |	low light (50umol/m2/s)
+SRR26961635 |	4560240800 |	SRX22655340 |	bhlh89\,91 |	GSM7919267 |	RNA-Seq |	PAIRED |	TRANSCRIPTOMIC | SRP474470 |	normal light (200umol/m2/s)
+SRR26961636 |	4554776200 |	SRX22655342 |	bhlh89\,91 |	GSM7919269 |	RNA-Seq |	PAIRED |	TRANSCRIPTOMIC | SRP474470 | normal light (200umol/m2/s)
+SRR26961637 |	4565567400 |	SRX22655337 |	bhlh89\,91 |	GSM7919264 |	RNA-Seq |	PAIRED |	TRANSCRIPTOMIC | SRP474470 |	low light (50umol/m2/s)
+SRR26961638 |	4562497000 |	SRX22655336 |	bhlh89\,91 |	GSM7919263 |	RNA-Seq |	PAIRED |	TRANSCRIPTOMIC | SRP474470 | low light (50umol/m2/s)  
+
+# 1. Download raw reads  
+
+In order to download the reads of each sample to start the project, we make use of the script bit09-download-srr.sh (modified to download all the reads, not only 100) located on /data/bit09/scripts on server 172.21.22.201. It asks for three parameters: the file with accession numbers of each sample (SRR.txt located on /home/gemam), the path of the output folder (/home/gemam/1-sra-data) and if the data is single end or paired end (PE in this case). 
+Once we get the fastq.gz file in the folder 1-sra-data, we proceed to the next step.  
+
+# 2. Quality control with FastQC and trimming  
+
+To do this step, we use fastQC (version v0.12.1) and the script bit09-fastqc.sh located on the same folder as the script used above. The path of the input folder is /home/gemam/1-sra-data, the path of the output folder is /home/gemam/2-fastQC and the number of threads to use is 4. By doing this, we get a report about the quality of the reads for each sample, in html format. As we have 16 samples, it is easier to transfer the html files to the local machine using filezilla (version 3.66.4) and use multiQC (version 1.19) to get an overview about the quality of the reads on each sample, all in one report.  
+After this, we proceed to do trimmomatic (version 0.39) to remove adapters and low quality bases using the script bit09-trimmomatic-PE.sh, the folder 1-sra-data as input and the folder 3-trimmomatic as the output folder were the results are stored. Then, we run bit09-fastqc.sh script and fastqc and multiQC later, to get a report about the quality of the samples after the trimming process, so we can compare the quality before and after trimming.  
+FastQC uses the fastq.gz files stored in the folder 3-trimmomatic as input and the folder 4-fastqc_trimmed as output. The multiQC report before trimming is stored on 2-fastQC and the report after trimming is stored on 4-fastqc_trimmed.  
+
+Before trimming, we only had problems in per base sequence content and sequence duplication levels, as you can see in the images below.  
+
+
+image: ![Per base sequence content before trimming](C:/Users/TOSHIBA/OneDrive/Documentos/Advanced Bachelor in Bioinformatics/ADVABIT 09 High-Throughput analysis/Per base seq content before trimming.png)   
+
+The deviations we can see at the beginning of the reads are quite normal, due to the preparation of the genetic material and do not impact further analysis.  
+
+image: ![Sequence duplication levels before trimming](C:/Users/TOSHIBA/OneDrive/Documentos/Advanced Bachelor in Bioinformatics/ADVABIT 09 High-Throughput analysis/Sequence duplication levels before trimming.png)  
+
+When sequencing RNA, both highly represented and less frequent transcripts are present. It is expected to observe duplicate reads for highly represented transcripts. Despite the anticipated presence of duplicates in the data, the RNA-Seq data was still marked as fail by FastQC, but this do not impact further analysis either.  
+
+image: ![Sequence length distribution after trimming](C:/Users/TOSHIBA/OneDrive/Documentos/Advanced Bachelor in Bioinformatics/ADVABIT 09 High-Throughput analysis/Sequence length distribution after trimming.png)  
+
+After trimming,we got the same two failures as before, plus a sequence length warning. This warning is expected, as the process trims low-quality bases, resulting in varied read lengths, which is not problematic for the rest of the analysis.    
+
+# 3. Mapping  
+
+Once the quality tests are done, we are ready to map our RNA-seq samples against the transcriptome of a reference genome, that in our case is the Ref-Seq of *Arabidopsis thaliana*. The index needed is already built on the server (/data/igenomes/hisat2-index-TAIR10.1_genome_tran), so we use hisat2 (version 2.2.1) and the script bit09-mapping-hisat2-PE.sh, using the folder 4-fastqc_trimmed as input, the path to the transcriptome index and prefix of the files and the folder 5-hisat2-trimmed-genome-tran as output.  
+Also we specified to redirect the standard output and standard error to different files, located on /home/gemam/5-hisat2-trimmed-genome-tran. If we inspect the file hisat2_stderr.txt, we can see the following allignment rates:  
+
+Samples | Overall alignment rates  
+---------------------------------
+SRR26961623 | 98.94%
+SRR26961624 | 98.91%
+SRR26961625 | 98.88%
+SRR26961626 | 99.01%
+SRR26961627 | 98.88%
+SRR26961628 | 99.02%
+SRR26961629 | 98.92%
+SRR26961630 | 98.92%
+SRR26961631 | 98.55%
+SRR26961632 | 98.95%
+SRR26961633 | 98.94%
+SRR26961634 | 98.95%
+SRR26961635 | 99.02%
+SRR26961636 | 98.95%
+SRR26961637 | 98.98%
+SRR26961638 | 98.98%  
+
+As any of the alignment rates is lower than 95%, this means that everything is fine, there is no contamination and the percentage of mismatches is adequate to our circumstances.  
+
+# 4. Samtools  
+
+After mapping it is crucial to filter on mapping quality,  sort and index the .bam files using samtools (version 1.18), so we are able to inspect the results on IGV. In order to do that, we use the script bit09-filtering-samtools.sh, providing 5-hisat2-trimmed-genome-tran as input folder, 6-hisat2_filtered as output folder and 20 as MAPQ quality score.  
+
+# 5. IGV  
+
+After samtools, the correspond gene of each of the bHLH proteins was inspected in IGV (web app version 1.13.11), were we loaded the reference genome and the sorted and indexed .bam files to compare to each other. The bHLH proteins analyzed in this project correspond to the following TAIR number:   
+
+Protein | TAIR number 
+---------------------
+bHLH89 | At1g06170
+bHLH91 | At2g31210
+bHLH10 | At2g31220
+
+image: ![bHLH89 in WT](C:/Users/TOSHIBA/OneDrive/Documentos/Advanced Bachelor in Bioinformatics/ADVABIT 09 High-Throughput analysisbHLH89_in_wildtype.png)  
+
+The reference genome was loaded against the sample SRR26961623, which corresponds to the wild type, and the reads corresponding to both bHLH transcription factors are found in this sample, so that means everything is correct. The same has been done to the rest of samples and they are all correct.   
+
+# 6. Counting  
+
+The last step after DE analysis is the counting step, that means we are going to estimate the transcript abundances using HTSeq-count (version 0.12.3). For this, we used bit09-htseqcount.sh script, using 6-hisat2_filtered as the input folder, /data/igenomes/Arabidopsis_thaliana/GCF_000001735.4_TAIR10.1_genomic.gtf as the annotation file, 7-hisat2_trimmed_genome_tran_htseqcount as the output folder, exon as the feature type to use from GTF file, gene_id as the attribute to use as label for counting, PE as library layout, NO strandedness, intersection-strict mode and 4 threads to use. Doing this I encountered a problem in the gtf file used, as the strands needed to be specified as '+', '-' or '.', and some of them had a ? symbol (strandedness is relevant but unknown) instead of one of those three. In order to solver this problem, the ? symbols were substituted for a '.' symbol (feature is not stranded) in the gtf file, that was renamed to Adjusted_GCF_000001735.4_TAIR10.1_genomic.gtf. After this, the problem was solved and could get the counting files for DE analysis.  
+
+# 7. Differential expression analysis  
+
+The last step in the analysis is the differential expression analysis using the packages edgeR and Limma in R (version 4.3.1). As we have the counts of each sample in separated files, we combine them in one data frame using the script bit09-merge-htseqcounts.R.    
+
+``` {r, echo=FALSE, eval=TRUE, warning= FALSE}
+################################################################################
+### Merge the count files after running htseq-count using this R script
+### Download files from server on your local machine using FileZilla
+################################################################################
+### Get names count files
+################################################################################
+setwd("C:/Users/TOSHIBA/OneDrive/Documentos/Advanced Bachelor in Bioinformatics/ADVABIT 09 High-Throughput analysis/Counts")
+pathFiles <- "C:/Users/TOSHIBA/OneDrive/Documentos/Advanced Bachelor in Bioinformatics/ADVABIT 09 High-Throughput analysis/Counts"
+patternFiles <- ".txt"
+patternAfterSampleName <- "_filtered_sorted"
+patternBeforeSampleName <- "counts_"
+countFiles <- list.files(path = pathFiles,
+                         pattern = patternFiles,
+                         all.files = TRUE,
+                         recursive = FALSE,
+                         ignore.case = FALSE,
+                         include.dirs = FALSE)
+################################################################################
+### Get counts from first file/sample in data frame
+################################################################################
+pathCountFile1 = paste(pathFiles, 
+                      countFiles[1], 
+                      sep = "/")
+df.count <- read.table(pathCountFile1,
+                       header = FALSE, 
+                       stringsAsFactors = FALSE)
+################################################################################
+### Set column names
+################################################################################
+# Capture text using () and reprint using \\1
+column2 <- gsub("(.*).txt", "\\1", countFiles[1])
+column2 <- gsub(patternAfterSampleName, "", column2)
+column2 <- gsub(patternBeforeSampleName, "", column2)
+colnames(df.count) <- c("ID", column2)
+################################################################################
+### Add counts from other samples in data frame
+################################################################################
+for (i in 2:length(countFiles) ) {
+  pathCountFile = paste(pathFiles, 
+                        countFiles[i], 
+                        sep = "/")
+  df.next <- read.table(pathCountFile,
+                        header = FALSE, 
+                        stringsAsFactors = FALSE)
+  column2 <- gsub("(.*).txt", "\\1", countFiles[i])
+  column2 <- gsub(patternAfterSampleName, "", column2)
+  column2 <- gsub(patternBeforeSampleName, "", column2)
+  colnames(df.next) <- c("ID", column2)
+  df.count <- merge(df.count, df.next, by = c("ID"))
+}
+# Show first 10 rows, all columns
+df.count[1:10,]
+################################################################################
+### Calculate total amount counts per sample, get summary and write to file
+################################################################################
+### IDs as rownames
+rownames(df.count) <- df.count$ID
+df.count <- df.count[,-1]
+### Calculate total amount counts per sample (added as last line)
+df.count <- rbind(df.count, total.counts = colSums(df.count))
+# tail(df.count[,c(1:3)])
+### Get __lines
+data.summary <- df.count[grep("__", rownames(df.count), 
+                              perl = TRUE, 
+                              invert = FALSE), ]
+### Get last line with total.counts
+lastLine <- df.count[grep("total.counts", rownames(df.count), 
+                          perl = TRUE, 
+                          invert = FALSE), ]
+data.summary <- rbind(data.summary, lastLine)
+write.table(t(data.summary), 
+            file = paste0(pathFiles,"/summary_counts.txt"), 
+            sep = "\t",
+            col.names = NA)
+################################################################################
+### Create data frame with all count values and save to file
+### Remove __rows and last total.counts line
+################################################################################
+allCounts <- df.count[grep("__", rownames(df.count), 
+                           perl = TRUE, 
+                           invert = TRUE), ]
+write.table(allCounts[-nrow(allCounts),], 
+            file = paste0(pathFiles, "/all_counts.txt"), 
+            sep = "\t",
+            col.names = NA)
+################################################################################
+################################################################################
+```  
+
+```{r echo=FALSE, eval=TRUE}
+
+# Loading required packages
+library("limma")
+library("edgeR")
+library("Glimma")
+library("RColorBrewer") # to use brewer.pal
+library("DESeq2")        
+
+
+################################################################################
+### DATA PACKAGING: READING IN COUNT DATA & CREATING DGEList OBJECT
+################################################################################
+setwd("C:/Users/TOSHIBA/OneDrive/Documentos/Advanced Bachelor in Bioinformatics/ADVABIT 09 High-Throughput analysis/Counts")
+# To start we need counts summarised at gene-level:
+# read table from all_counts.txt
+
+countData <- read.table(file = "all_counts.txt",
+                        sep = "\t", 
+                        header = TRUE, 
+                        stringsAsFactors = FALSE)
+
+# Check first 5 rows
+countData[1:5,1:17]
+# If first column contains genes (not counts) --> use as rownames
+rownames(countData) <- countData$X
+# Check first 5 rows again
+countData[1:5,] 
+# Remove filename column
+countData <- countData[,-1]
+# Check first 5 rows again
+countData[1:5,]
+# Create DGEList object (requires edgeR) which will contains count data
+DGEobject <- DGEList(counts=countData)
+# Check dimensions 
+dim(DGEobject)
+```
+ 
+```{r, echo=FALSE, eval=TRUE, warning=FALSE}
+################################################################################
+### DATA PACKAGING: READING & ORGANISING SAMPLE INFORMATION (METADATA)
+################################################################################
+# We also need metadata describing the experiment and samples:
+# e.g. read table SraRunTable.csv or your own metaData file
+setwd("C:/Users/TOSHIBA/OneDrive/Documentos/Advanced Bachelor in Bioinformatics/ADVABIT 09 High-Throughput analysis")
+metaData <- read.table(file = "SraRunTable.txt",
+                       sep = ",",
+                       quote = '"',
+                       header = TRUE, 
+                       stringsAsFactors = TRUE)
+                       
+# Show colnames
+colnames(metaData)
+# Show most important columns e.g. "Run" and "genotype" columns
+metaData[,c("Run","genotype")]
+# Add SraRunTable info to DGEobject$samples
+DGEobject$samples <- cbind(DGEobject$samples, metaData[,c("Run","genotype")])
+DGEobject$samples
+#extracol <- c(rep("WT",3), rep("KO",3))
+#DGEobject$samples <- cbind(DGEobject$samples, extracol)
+extracol <- c(rep("WT",8), rep("KO",8))
+extracol2 <- c("S1","S2","S3","S4","S5","S6", "S7", "S8", "S9", "S10", "S11", "S12", "S13", "S14", "S15", "S16")
+DGEobject$samples <- cbind(DGEobject$samples, extracol)
+DGEobject$samples <- cbind(DGEobject$samples, extracol2)
+DGEobject$samples
+#extracol <- c(rep("WT",3), rep("KO",3))
+#DGEobject$samples <- cbind(DGEobject$samples, extracol)
+extracol <- c(rep("WT",8), rep("KO",8))
+extracol2 <- c("S1","S2","S3","S4","S5","S6", "S7", "S8", "S9", "S10", "S11", "S12", "S13", "S14", "S15", "S16")
+DGEobject$samples <- cbind(DGEobject$samples, extracol)
+DGEobject$samples <- cbind(DGEobject$samples, extracol2)
+
+```
+
+```{r eval=FALSE, eval=TRUE}
+
+################################################################################
+### CHECKING LIBRARY SIZES AND SOME GENES (COUNTS)
+################################################################################
+# Check the library sizes of the samples
+
+DGEobject$samples$lib.size
+
+# BARPLOT LIB SIZES (all samples)
+# savePath <- "/home/user/results"
+# pdf(paste(savePath,"QC-barplot-libsizes.pdf",sep=""))
+par(mar = c(8,6,4,4)) # more margin: bottom, left, top, right
+bp <- barplot(DGEobject$samples$lib.size*1e-6, col="pink",
+              axisnames = FALSE,
+              main = "Barplot library sizes",
+              ylab = "Library size (millions)")
+axis(1, labels = rownames(DGEobject$samples), 
+     at = bp, las = 2, cex.axis = 0.8)
+# dev.off()
+
+# To check counts of genes
+DGEobject$counts[1:5,]
+# --> shows counts for first five rows (genes)
+DGEobject$counts["AT1G06170",]
+DGEobject$counts["AT2G31210",]
+DGEobject$counts["AT2G31220",]
+# --> shows bHLH89, bHLH91 and bHLH10 counts for each sample 
+```
+As we can see, the library sizes of the samples, is more or less the same, except for the first two samples, that as we have inspected, they have low read counts compared to the rest of the samples. Now we proceed to transform the count data into counts per million and remove the lowly expressed genes, using CPM>1 as threshold. Also genes must be expressed in at least three samples to be kept for downstream analysis.  
+
+
+```{r, echo=TRUE, eval=TRUE}
+
+################################################################################
+### DATA PRE-PROCESSING: Transformations from the raw scale
+################################################################################
+# Common practice to transform raw counts onto a scale that accounts 
+# for such library size differences. Popular transformations include 
+# counts per million (CPM), log2-counts per million (log-CPM), 
+# reads per kilobase of transcript per million (RPKM), and fragments per 
+# kilobase of transcript per million (FPKM)
+cpm <- cpm(DGEobject)
+log.cpm <- cpm(DGEobject, log = TRUE)
+# Genes that are not expressed
+no.samples <- nrow(DGEobject$samples)
+table(rowSums(DGEobject$counts==0)==no.samples)
+# FALSE  TRUE 
+# 28556  9739
+# --> 9739 genes have no expression (counts=0) in any of the samples
+DGEobject$counts[rowSums(DGEobject$counts==0)==no.samples,]
+################################################################################
+### DATA PRE-PROCESSING: Reduce subset of genes
+################################################################################
+# Genes that are not expressed at a biologically meaningful level 
+# in any condition should be discarded to reduce the subset of genes 
+# to those that are of interest, and to reduce the number of tests carried out 
+# downstream when looking at differential expression.
+# Using a nominal CPM value of 1 (which is equivalent to a log-CPM value of 0 
+# a gene is deemed to be expressed in a given sample if its transformed count 
+# is above this threshold, and unexpressed otherwise. 
+# Genes must be expressed in at least one group (or roughly any three samples 
+# across the entire experiment) to be kept for downstream analysis.
+keep.exprs <- rowSums(cpm>1)>=3
+DGEfiltered <- DGEobject[keep.exprs,, keep.lib.sizes = FALSE]
+dim(DGEfiltered)
+# [1] 20056  16
+
+# Now transform subset to get filtered+transformed cpmF (and log.cpmF)
+cpmF <- cpm(DGEfiltered)
+log.cpmF <- cpm(DGEfiltered, log = TRUE)
+# Using this criterion, the number of genes is reduced
+# DGEList-object "DGEobject" contains raw pre-filtered data
+# DGEList-object "DGEfiltered" contains post-filtered data
+
+# Density plots of log-CPM values for raw pre-filtered data
+# and post-filtered data (yF1000R)
+nsamples = ncol(DGEfiltered)
+# brewer.pal Paired max 12 colors # library(RColorBrewer)
+sample.col <- c("pink", "skyblue", "violet", "red", "orange", "black", "darkblue", "darkred", "yellow3", "green", "darkgreen", "darkgrey", "lightblue", "chocolate", "gold", "deepskyblue")
+# alternative use own list of colors to randomly choose from
+
+#pdf("/pathToResults/logCPM-densityplots.pdf", width = 8, height = 5)
+par(mfrow = c(1,2))
+# Density plot part A: raw data pre-filtered
+plot(density(log.cpm[,1]), 
+     col = sample.col[1], lwd = 2, las = 1, ylim = c(0,0.5),
+     main = "A. Raw data", xlab = "Log-cpm")
+abline(v = 0, lty = 3)
+for (i in 2:nsamples){
+    den <- density(log.cpm[,i])
+    lines(den$x, den$y, col = sample.col[i], lwd = 2)
+}
+legend("topright", rownames(DGEobject$samples), 
+       text.col = sample.col, cex = 0.7, bty = "n")
+# Density plot part B: post-filtered
+plot(density(log.cpmF[,1]), 
+     col = sample.col[1], lwd = 2, las = 2, ylim = c(0,0.5),
+     main = "B. Filtered data", xlab = "Log-cpm")
+abline(v = 0, lty = 3)
+for (i in 2:nsamples){
+  den <- density(log.cpmF[,i])
+  lines(den$x, den$y, col = sample.col[i], lwd = 2)
+}
+legend("topright", rownames(DGEfiltered$samples), 
+       text.col = sample.col, cex = 0.7, bty="n")
+#dev.off()
+
+
+```
+The density plot of raw data confirms that the first two samples have a weird distribution, whereas the rest of the samples share the same distribution so this means that something is going on on the first two samples. After eliminating the low expressed genes, we can see that the result is the same, again the first two samples (SRR26961623 and SRR26961624, both wild types), have a different distribution compared to the rest of the samples. For this reason , a normalization step is needed, to ensure that each sample has a similar expression distribution across the experiment.  
+
+```{r, echo=TRUE, eval=TRUE}
+
+################################################################################
+### DATA PRE-PROCESSING: Normalising gene expression distributions
+################################################################################
+## Normalisation generally required to ensure that expression distributions
+## of each sample are similar across the entire experiment.
+## Any plot showing the per sample expression distributions, such as a density or boxplot,
+## is useful in determining whether any samples are dissimilar to others. 
+## Normalisation by the method of trimmed mean of M-values (TMM)
+## is performed using the calcNormFactors function in edgeR.
+# cpmF = filtered subset # log.cpmF = log cpm filtered subset
+# Copy unnormalized, filtered data to show in boxplot
+DGEf.notnorm <- DGEfiltered 
+DGEf.norm <- calcNormFactors(DGEfiltered, method = "TMM")
+DGEf.norm$samples$norm.factors
+# [1] 0.9979337 0.9948348 1.0076473 0.9993417 1.0057461 0.9945725
+# --> scaling factors relatively close to 1 --> mild TMM normalisation
+
+## Boxplots of log-CPM values showing expression distributions 
+## for unnormalised data (A) and normalised data (B) for each sample
+par(mfrow = c(1,2))
+par(mar = c(8,2,4,2))
+# Boxplot unnormalised data
+DGEf.notnorm$samples$norm.factors
+# [1] 1 1 1 1 1 1
+log.cpmF.notnorm <- cpm(DGEf.notnorm, log = TRUE)
+boxplot(log.cpmF.notnorm, las = 2, col = sample.col, cex = 0.9, 
+        main = "A. Unnormalised data", ylab = "Log-cpm")
+# Boxplot normalised data
+DGEf.norm$samples$norm.factors
+# [1] 0.9979337 0.9948348 1.0076473 0.9993417 1.0057461 0.9945725
+log.cpmF.norm <- cpm(DGEf.norm, log = TRUE)
+boxplot(log.cpmF.norm, las = 2, col = sample.col, cex = 0.9, 
+        main = "B. Normalised data", ylab = "Log-cpm")
+# --> only when scaling factors are not close to 1 you will see a big difference
+```
+
+
+Both unnormalised and normalised boxplots are quite similar, the first two samples are slightly different from the others, so we can perform multidimensional scaling (MDS) to see how the samples cluster. Ideally samples should cluster within the conditions of interest.  
+
+```{r echo=FALSE, eval=TRUE}
+
+################################################################################
+### DATA PRE-PROCESSING: Unsupervised clustering of samples
+################################################################################
+## Most important exploratory plots to examine for gene expression analyses 
+## is the multidimensional scaling (MDS) plot.
+## The plot shows similarities and dissimilarities between samples 
+## in an unsupervised manner so that one can have an idea of the extent to which
+## differential expression can be detected before carrying out formal tests.
+## Ideally, samples would cluster well within the primary condition of interest.
+## MDS plot of log-CPM values using limma plotMDS function
+## Dimensions 1 and 2 are examined using color grouping defined by sample group
+par(mfrow = c(1,1), mar = c(8,6,4,2))
+col.group <- DGEfiltered$samples$genotype
+col.group <- metaData$genotype
+levels(col.group) <- brewer.pal(nlevels(col.group), "Set1")
+# Warning if you only have two groups
+col.group
+# [1] #377EB8 #377EB8 #377EB8 #E41A1C #E41A1C #E41A1C
+# Levels: #E41A1C #377EB8 #4DAF4A
+col.group <- as.character(col.group)
+col.group
+# [1] "#377EB8" "#377EB8" "#377EB8" "#E41A1C" "#E41A1C" "#E41A1C"
+plotMDS(log.cpmF.norm, 
+        #labels= DGEfiltered$samples$extracol
+        col = col.group,
+        cex = 0.7, 
+        xlim = c(-7.0,4.0), 
+        ylim = c(-4.0,2.0),
+        dim = c(1,2),
+        main="MDS plot")
+# OPTIONAL: interactive MDS plot (MDS-Plot.html) using glMDSPlot from Glimma
+glMDSPlot(log.cpmF.norm, 
+          labels = DGEfiltered$samples$genotype,
+          # select groups (columns) from metaData
+          groups = metaData[,c("genotype","Run")], 
+          launch = TRUE)
+```
+[link](file:///C:/Users/TOSHIBA/OneDrive/Documentos/Advanced%20Bachelor%20in%20Bioinformatics/ADVABIT%2009%20High-Throughput%20analysis/glimma-plots/MDS-Plot.html)  
+
+As we can see in the MDS plot, the same two samples that showed a different density distribution, seem to be different from each other and quite different from the rest of the samples. Al the mutant samples (in red) cluster together whereas the wild types have form two clusters, excluding the two samples mentioned before. In the paper, they have checked the batch effects through PCA, so comparison between both techniques is necessary, as in the paper, scientists do not report any differences between the first two samples and the rest.   
+
+```{r, echo=FALSE, eval=TRUE}
+set.seed(1)
+samples <- colnames(log.cpmF.norm)
+genes <- rownames(log.cpmF.norm)
+
+# Run PCA
+set.seed(1)
+PCA <- prcomp(t(log.cpmF.norm),  scale=TRUE)
+PCA
+plot(PCA, type="l")
+# --> error: perplexity is too large
+# --> when only few samples (and filtered genes)
+# Plot the results
+par(mfrow=c(1,1))
+plot(PCA$x[,1:4],
+     col = sample.col,
+     pch = 17,
+     main = "PCA", xlim=c(-300, 100))
+legend("topleft",
+       legend = metaData$Run,
+       col = sample.col,
+       pch = 17,
+       cex = 0.8,
+       bty = 'n')
+```
+PCA results show the same as the MDS plot, so it would be useful to perform a t-student test to see if the differences are significant between the samples.  
+
+```{r, echo=FALSE, eval=TRUE}
+
+Sample1 <- as.numeric(c(countData$SRR26961623_1))
+Sample2 <- as.numeric(c(countData$SRR26961624_1))
+Sample3 <- as.numeric(c(countData$SRR26961625_1))
+Sample4 <- as.numeric(c(countData$SRR26961626_1))
+Sample5 <- as.numeric(c(countData$SRR26961627_1))
+Sample6 <- as.numeric(c(countData$SRR26961628_1))
+Sample7 <- as.numeric(c(countData$SRR26961629_1))
+Sample8 <- as.numeric(c(countData$SRR26961630_1))
+Sample9 <- as.numeric(c(countData$SRR26961631_1))
+Sample10 <- as.numeric(c(countData$SRR26961632_1))
+Sample11 <- as.numeric(c(countData$SRR26961633_1))
+Sample12 <- as.numeric(c(countData$SRR26961634_1))
+Sample13 <- as.numeric(c(countData$SRR26961635_1))
+Sample14 <- as.numeric(c(countData$SRR26961636_1))
+Sample15 <- as.numeric(c(countData$SRR26961637_1))
+Sample16 <- as.numeric(c(countData$SRR26961638_1))
+x <- c(Sample1, Sample2, Sample3, Sample4, Sample5, Sample6, Sample7, Sample8, Sample9, Sample10, Sample11, Sample12, Sample13, Sample14, Sample15, Sample16)
+t.test(x)
+```
+As we can see, p value is lower than 0.05, so this means that the different samples are statistically different in terms of counts. This proves that the first two samples, are statistically significant from the rest. As we have 8 wildtype samples, and the first two have low counts, maybe it is better to ignore these two and keep going with the rest of them.  
+
+```{r, echo=FALSE, eval=TRUE}
+################################################################################
+### DIFFERENTIAL EXPRESSION ANALYSIS: Design matrix and contrasts
+################################################################################
+# Comparing Wildtype (WT) vs mutants (KO)
+colnames(DGEf.norm)
+DGEfiltered$samples$genotype
+
+group <- DGEfiltered$samples$extracol
+
+## DESIGN MATRIX
+design <- model.matrix(~0+group)
+colnames(design)
+
+colnames(design) <- gsub("group", "", colnames(design))
+colnames(design)
+
+design
+
+# sample_group <- c(rep("WT",3), rep("T1",3), rep("T2",3))
+# sample_group
+# design <- model.matrix(~0+sample_group)
+# colnames(design) <- gsub("sample_group", "", colnames(design))
+# design
+
+## CONTRASTS for pairwise comparisons between groups 
+## are set up in limma using the makeContrasts function.
+contr.matrix <- makeContrasts(
+  KOvsWT = KO-WT,
+  levels = colnames(design))
+contr.matrix
+
+```
+```{r, echo=FALSE, eval=TRUE}
+################################################################################
+### DIFFERENTIAL EXPRESSION ANALYSIS: Removing heteroscedasticity
+################################################################################
+## Removing heteroscedasticity from count data
+## In limma, linear modelling is carried out 
+## on the log-CPM values ... by the voom function.
+par(mfrow = c(1,2), mar = c(8,6,4,2))
+vDGEf <- voom(DGEf.norm, design, plot = TRUE)
+vDGEf
+## Fitting linear models for comparisons of interest
+## Linear modelling in limma is carried out using 
+## the lmFit and contrasts.fit functions 
+vfitDGEf <- lmFit(vDGEf, design)
+vfitDGEf <- contrasts.fit(vfitDGEf, 
+                          contrasts = contr.matrix)
+efitDGEf <- eBayes(vfitDGEf)
+plotSA(efitDGEf, main = "Final model")
+```
+Distributions of counts are naturally heterocedastic, meaning that the variance of the error is not constant through the different samples, having larger variances on larger counts. Voom converts raw counts into log-CPM values, and the plot typically shows a decreasing trend, as we can see on the left plot. After a linear modelling process, we get the final model where the heterocedasticity is adjusted.The model’s residual variances are plotted against average expression values (in Final model) and variance is no longer dependent on mean expression level.  
+
+```{r, echo=FALSE, eval=TRUE}
+################################################################################
+### DIFFERENTIAL EXPRESSION ANALYSIS: Examining the DE genes
+################################################################################
+### Examining the number of DE genes
+## Significance is defined using an adjusted p-value cutoff that is set at 5% by default.
+summary(decideTests(efitDGEf))
+```  
+
+As we can see in the fist table, we have 2628 genes downregulated and 2784 genes upregulated in KO (mutant) relative to the wildtype.  
+
+```{r, echo=FALSE, eval=TRUE}
+## Some studies require more than an adjusted p-value cut-off. 
+## When testing requires genes to have a log-FC that is significantly greater than 1 
+## (equivalent to a 2-fold difference between cell types on the original scale).
+tfitWTvsKO <- treat(vfitDGEf, lfc = 1)
+dtWTvsKO <- decideTests(tfitWTvsKO)
+summary(dtWTvsKO)
+```  
+Using the log-fold changes, we reduce the number of genes downregulated to 21 and the number of genes upregulated to 9.  
+
+```{r, echo=FALSE, eval=TRUE}
+## topTable for results using eBayes
+WT.vs.KO <- topTable(efitDGEf, 
+                     coef = 1, 
+                     n = Inf)
+topgenes <- head(WT.vs.KO, n = 10)
+topgenes
+```  
+In this table we can see the top 10 differential expressed genes using e-Bayes moderated t-statistics.  
+
+```{r, echo=FALSE, eval=TRUE}
+# Top genes up and down sorted by logFC
+topgenes.ordered <- topgenes[order(topgenes$logFC),] 
+
+top10genes.ordered <- head(topgenes.ordered, n = 5)
+top10genes.ordered <- rbind(tail(topgenes.ordered, n = 5),
+                            top10genes.ordered)
+top10genes.ordered <- top10genes.ordered[order(top10genes.ordered$logFC),] 
+top10genes.ordered
+```  
+Here we can see the top 10 differential expressed genes sorted by logFC.   
+
+```{r, echo=FALSE, eval=TRUE}
+## topTreat for results using treat 
+# tfitWTvsKO <- treat(vfitDGEf, lfc = 1)
+topTreat.WTvsKO <- topTreat(tfitWTvsKO, coef = 1, n = Inf)
+topTreatgenes <- head(topTreat.WTvsKO, n = 10)
+topTreatgenes
+# Top genes
+topTreatgenes.ordered <- topTreatgenes[order(topTreatgenes$logFC),] 
+topTreatgenes.ordered
+# write.csv(top10genes.ordered, file = "top10genes-ordered.csv")
+```  
+
+Here we have used treat instead of eBayes to get the top 10 differential expressed genes. We can see that the first gene is the same as in eBayes sorted by logFC.  
+
+```{r, echo=FALSE, eval=TRUE}
+################################################################################
+### DIFFERENTIAL EXPRESSION ANALYSIS: graphical representations of DE genes
+################################################################################
+par(mfrow = c(1,1), mar = c(8,6,4,2))
+# Volcano plot 
+volcanoplot(efitDGEf, coef = 1, highlight = 8, 
+            names = rownames(efitDGEf$coefficients), xlim=c(-8,8))
+```  
+As we can see in the volcano plot, the genes that do not change their expression, will have a log2 Fold Change close to 0, whereas the genes that are on the top of the plot, will be the most variable in terms of expression (codes in blue colour) and thereby, the most relevant for our analysis.   
+
+```{r, echo=FALSE, eval=TRUE}
+## MD plot
+plotMD(tfitWTvsKO, column = 1, status = dtWTvsKO[,1], 
+       main = "KOvsWT", xlim = c(-2,15))
+```  
+
+With the MD plot we can check the genes that have a expression significantly different from the mean. The ones in red are up regulated whereas the ones in blue are down regulated. The number of genes(dots) of each correspond to the up and down regulated gene table we have seen above in the analysis.  
+
+```{r, echo=FALSE, eval=TRUE, warning=FALSE}
+
+## Create your own color palette to use in heatmap
+color.palette <- colorRampPalette(c("blue", "violet", "green"))(n = 200)
+color.palette.2  <- colorRampPalette(c("violet", "white", "#1FFFBF"))(n = 200)
+color.palette.3 <- colorRampPalette(c("#0d50b2", 
+                                      "white", 
+                                      "#c5081a"))(n = 200)
+
+## Heatmap topTable genes
+# Get names of genes to show
+genes10topTable <- rownames(top10genes.ordered) # top
+# Packages required to use heatmap and str_count
+# install.packages("gplots")
+library("gplots")
+# install.packages("stringr")
+library("stringr")
+# Create heatmap
+
+
+par(mar=c(8,2,2,8))
+heatmap.2(vDGEf$E[genes10topTable,],
+          ## DENDOGRAM CONTROL
+          Rowv = FALSE, # do not reorder rows!
+          # distfun = dist,
+          # hclustfun = hclust,
+          dendrogram = "column",
+          # symm = FALSE,
+          ## DATA SCALING
+          scale = "row",
+          ## image plot
+          # revC = identical(Colv, "Rowv"),
+          # breaks,
+          col = color.palette.2, 
+          ## BLOCK SEPARATION
+          # colsep,
+          # rowsep,
+          # sepcolor="white",
+          # sepwidth=c(0.05,0.05),
+          ## CELL LABELING
+          # cellnote,
+          # notecex=1.0,
+          # notecol="cyan",
+          # na.color=par("bg"),
+          ## LEVEL TRACE
+          trace = "none", 
+          ## ROW/COLUMN LABELING
+      margins = c(10,5),
+          # ColSideColors,
+          # RowSideColors,
+          cexRow = 0.7,
+          cexCol = 0.7,
+          labRow = genes10topTable, 
+          labCol = str_c(colnames(DGEf.norm), group, sep = "-"),
+          ## COLOR KEY + DENSITY INFO
+          
+          key = TRUE,
+          density.info = "none",
+         
+          
+)
+```
+If we take a closer look to the heatmap created, we can see how the top 10 DE genes are expressed through the different samples. The most DE gene,  AT1G08065, seems to be upregulated in all of the wildtype (WT) samples, whereas it is downregulated in all of the knock-out (KO) samples, so maybe this gene is related to the bHLH89 and bHLH91 genes, that have been eliminated in the knock-out samples. Same happens for the genes AT5G50120, AT1G55560, AT3G57620, AT1G32450, AT2G21140, AT1G65620 and AT5G23700.  
+On the opposite side we have the genes AT2G02990 and AT3G29644, that are downregulated in the wildtype samples, whereas they are upregulated in the knock-out samples.  
+We can also see associations between different samples. If we pay attention to the metadata table at the beginning of the report, we can see the light conditions for the different samples. Here, we can see that the dendrogram is separated into two big groups, one belongs to the KO samples (on the left), and the other one belongs to the wildtypes (on the right). Now if we check the most related samples at a lower level, we see that, for example, SRR26961637_1_KO and SRR26961638_1_KO, have a similar expression profile of the top 10 DE genes. These two samples are bHLH89, 91 mutants and also were treated with low light conditions. This pattern happens in all the groups, the samples with the same light conditions are grouped together, which is logical, but there are a few samples that need to be pointed out. SRR26961631_1_KO and SRR26961633_1_KO are grouped together at the lowest level, showing some genes highly downregulated (especially AT1G55560), but the first one had a normal light treatment whereas the second one has a low light treatment. This could mean that this gene is not affected by the light treatment but it is affected by the knock-out of bHLH89 and 91, which are transcription factors involved in the development of the pollen tapetum in *Arabidopsis thaliana*.Additionally, AT1G55560 is a gene that belongs to the SKS family, than seems to be involved in pollen tube formation, so the knock-out of bHLH89, 91 transcription factors could affect the expression of this gene and ultimately, the fertility of the plant.  
+Similar thing happens with SRR26961629_1_WT and SRR26961630_1_WT, the first one was treated with normal light conditions but the second one was treated with low light conditions. They both have similar expression profiles, especially for the gene AT32G29644, that corresponds to non coding RNA, which has an unknown function.  
+As we pointed out previously, sample SRR26961624_1_WT had low read counts, and in the heatmap we can see this is the saMple with the least changes in gene expression if we compared it to the rest of the samples. This could be explained because it is wildtype and also had normal light conditions. The weird thing here is that SRR26961625_1_WT and SRR26961629_1_WT are also wildtypes with normal light conditions but the last two genes, corresponding to a ribonuclease and non coding RNA, respectively, are highly downregulated. This event is something that definitely needs further investigation.  
+
+Gene Ontology (GO) and Kyoto Encyclopedia of Genes and Genomes(KEGG) pathway enrichment analysis was performed using the online Database for Annotation, Visualization and Integrated Discovery
+(DAVID) v6.8 (https://david.ncifcrf.gov/home.jsp). We searched for the top 10 most different expressed genes and we got the following descriptions, used in the explanation of the heatmap above:  
+
+Loci | Gene description
+------------------------------------------------------------
+AT1G08065 | Alpha carbonic anhydrase 5(ACA5)    
+AT5G50120 | Transduction/WD40 repeat-like superfamily protein    
+AT1G55560 | SKU5 similar 14(sks14)    
+AT3G57620 | Glyoxal oxidase-related protein     
+AT1G32450 | Nitrate transporter 1.5(NRT1.5)   
+AT2G21140 | Proline-rich protein 2(PRP2) 
+AT1G65620 | Lateral organ boundaries (LOB) domain family protein(AS2)   
+AT5G23700 | Coiled-coil protein    
+AT2G02990 | Ribonuclease 1(RNS1)  
+AT3G29644 | ncRNA  
+
+```{r, echo=FALSE, eval=TRUE}
+## Heatmap topTreat genes
+genestopTreat <- rownames(topTreatgenes.ordered)
+heatmap.2(vDGEf$E[genestopTreat,], 
+          scale = "row",
+          labRow = genestopTreat, 
+          labCol = str_c(colnames(DGEf.norm), 
+                         group, sep = "-"),
+          col = color.palette.2, 
+          trace = "none", density.info = "none",
+          Rowv = FALSE, # do not reorder rows!
+          margin = c(10,8), lmat = rbind(4:3,2:1), 
+          lhei = c(2,6), lwid = c(1.5,4), 
+          dendrogram = "column")
+```
+One of the main differences with the other heatmap is that four genes have been replaced by others. Also, the gene expression for SSR26961623 and SRR26961624 is quite similar, which makes sense, as they are both wildtypes and treated with normal light but it is still very different to SRR26961625 and SRR26961629, which have two last genes on the map downregulated, corresponding to non coding RNA and a uncharacterized protein, respectively, so we cannot explain why this is happening. Additionally, SRR26961626 and SRR26961625 have been grouped but the have different light conditions, so this could mean that these 10 genes are not very affected by the light conditions in the wildtype.  
+
+Here we can see the gene description of the newly genes added to the top DE genes.    
+
+Loci | Gene description
+------------------------------------------------------------
+AT1G61230 | Manose-binding lectin superfamily protein (AT1G61230)  
+AT3G45060 | High affinity nitrate transporter 2.6 (NRT2.6)    
+AT3G16460 | Manose-binding lectin superfamily protein (JAL34)    
+AT1G75945 | Uncharacterized protein (AT1G75945)    
+
+If we pay attention to the knock-outs,we can see that the samples SRR26961635, SRR26961636 and SRR26961632(all KO and normal light treatment) have a similar expression pattern between them, but different to the knock-outs that have been exposed to low light. This is not so clear in the wild type, so the theory here is that the low light conditions in the bHLH89,91 mutant could affect the transcription of some genes. The authors of the experiment conclude that the bhlh89,91 mutant showed a lower transcriptional response to light than the WT (Col-0). The also performed a GO enrichment analysis showing significant enrichment of GO terms such as sexual reproduction, lipid storage, glucose import, oxidation–reduction process, and
+SCF-dependent proteasomal ubiquitin-dependent catabolic process, suggesting that these responses are impaired in the bhlh89,91 mutant light response.  
+
+
